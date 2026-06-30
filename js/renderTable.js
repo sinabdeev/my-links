@@ -15,6 +15,7 @@ function renderTable(container, data) {
             const td = document.createElement('td');
             td.style.cursor = 'pointer';
             td.dataset.url = cell.url;
+            td.dataset.hasUrl = cell.url ? 'true' : 'false';
             const a = document.createElement('a');
             a.href = cell.url || '#';
             a.target = '_blank';

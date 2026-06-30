@@ -87,6 +87,12 @@ body {
     background: #f8faff;
 }
 
+/* Выделение активной ячейки при клавиатурной навигации */
+.data-table td.cell-active {
+    outline: 2px solid #4F46E5;
+    background: #e8eaff;
+}
+
 .data-table td a {
     color: #2563eb;
     text-decoration: none;
