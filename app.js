@@ -62,4 +62,7 @@ const loadedTables = {};
             activateTab(`tab${newIndex}`, true);
         }
     });
+
+    // Инициализация тултипа с задержкой
+    initTooltip();
 })();
