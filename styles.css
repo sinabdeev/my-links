@@ -102,7 +102,12 @@ body {
 }
 
 .data-table td:hover {
-    background: var(--dracula-line-highlight);
+    background: var(--dracula-purple);
+    color: var(--dracula-bg);
+}
+
+.data-table td:hover a {
+    color: var(--dracula-bg);
 }
 
 /* Выделение активной ячейки при клавиатурной навигации */
@@ -119,7 +124,7 @@ body {
 }
 
 .data-table td a:hover {
-    color: var(--dracula-purple);
+    color: var(--dracula-bg);
     text-decoration: none;
 }
 
