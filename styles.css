@@ -1,8 +1,25 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+:root {
+  /* Dracula Color Palette */
+  --dracula-bg: #282a36;
+  --dracula-fg: #f8f8f2;
+  --dracula-comment: #6272a4;
+  --dracula-selection: #44475a;
+  --dracula-line-highlight: #44475a;
+  --dracula-cyan: #8be9fd;
+  --dracula-green: #50fa7b;
+  --dracula-orange: #ffb86c;
+  --dracula-pink: #ff79c6;
+  --dracula-purple: #bd93f9;
+  --dracula-red: #ff5555;
+  --dracula-yellow: #f1fa8c;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background: #f5f5f5;
+    background: var(--dracula-bg);
+    color: var(--dracula-fg);
 }
 
 .tabs {
@@ -18,9 +35,9 @@ body {
     padding: 12px 10px;
     cursor: pointer;
     border: none;
-    background: #4F46E5;
+    background: var(--dracula-selection);
     font-size: 15px;
-    color: #e0e0ff;
+    color: var(--dracula-fg);
     border-radius: 8px 8px 0 0;
     box-shadow: none;
     transition: all 0.2s;
@@ -29,16 +46,16 @@ body {
 }
 
 .tab:hover {
-    color: #fff;
-    background: #6366F1;
+    color: var(--dracula-fg);
+    background: var(--dracula-purple);
 }
 
 .tab.active {
-    color: #fff;
-    background: #C0392B;
+    color: var(--dracula-bg);
+    background: var(--dracula-pink);
     font-weight: 700;
     box-shadow: none;
-    border-bottom-color: #C0392B;
+    border-bottom-color: var(--dracula-pink);
 }
 
 .tab-content {
@@ -62,18 +79,19 @@ body {
 .data-table td {
     padding: 12px 16px;
     text-align: left;
-    background: #fff;
+    background: var(--dracula-selection);
     border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
     word-break: break-word;
     overflow-wrap: break-word;
     position: relative;
+    color: var(--dracula-fg);
 }
 
 .data-table th {
-    background: #f0f4ff;
+    background: var(--dracula-bg);
     font-weight: 600;
-    color: #1a1a2e;
+    color: var(--dracula-fg);
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -84,29 +102,29 @@ body {
 }
 
 .data-table td:hover {
-    background: #f8faff;
+    background: var(--dracula-line-highlight);
 }
 
 /* Выделение активной ячейки при клавиатурной навигации */
 .data-table td.cell-active {
-    outline: 2px solid #4F46E5;
-    background: #e8eaff;
+    outline: 2px solid var(--dracula-cyan);
+    background: var(--dracula-selection);
 }
 
 .data-table td a {
-    color: #2563eb;
+    color: var(--dracula-cyan);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.15s;
 }
 
 .data-table td a:hover {
-    color: #1d4ed8;
+    color: var(--dracula-purple);
     text-decoration: none;
 }
 
 .loading {
-    color: #999;
+    color: var(--dracula-comment);
     font-style: italic;
     padding: 20px;
 }
@@ -118,8 +136,8 @@ body {
     bottom: calc(100% + 8px);
     left: 50%;
     transform: translateX(-50%);
-    background: #1a1a2e;
-    color: #fff;
+    background: var(--dracula-bg);
+    color: var(--dracula-fg);
     padding: 6px 12px;
     border-radius: 6px;
     font-size: 13px;
@@ -128,7 +146,7 @@ body {
     opacity: 0;
     transition: opacity 0.15s ease;
     z-index: 100;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
 /* Стрелочка тултипа */
@@ -139,7 +157,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     border: 4px solid transparent;
-    border-top-color: #1a1a2e;
+    border-top-color: var(--dracula-bg);
     opacity: 0;
     transition: opacity 0.15s ease;
     z-index: 100;
