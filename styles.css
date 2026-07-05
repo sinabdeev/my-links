@@ -112,8 +112,12 @@ body {
 
 /* Выделение активной ячейки при клавиатурной навигации */
 .data-table td.cell-active {
-    outline: 2px solid var(--dracula-cyan);
-    background: var(--dracula-selection);
+    background: var(--dracula-purple);
+    color: var(--dracula-bg);
+}
+
+.data-table td.cell-active a {
+    color: var(--dracula-bg);
 }
 
 .data-table td a {
