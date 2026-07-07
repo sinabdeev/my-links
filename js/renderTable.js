@@ -21,13 +21,26 @@ function renderTable(container, data) {
             a.target = '_blank';
             a.rel = 'noopener noreferrer';
             a.textContent = cell.text;
+            
+            // Единый обработчик клика на ячейке — инкремент счетчика и открытие ссылки
             td.addEventListener('click', (e) => {
-                // Не срабатывать, если кликнули непосредственно по ссылке (браузер сам обработает)
-                if (e.target.tagName !== 'A') {
-                    a.click();
+                if (cell.url) {
+                    incrementClickCount(cell.url);
+                    updateCounterDisplay(td, cell.url);
+                }
+                // Если клик не по ссылке, открываем URL программно
+                if (e.target.tagName !== 'A' && cell.url) {
+                    window.open(cell.url, '_blank', 'noopener,noreferrer');
                 }
             });
+            
             td.appendChild(a);
+            
+            // Отобразить счетчик переходов
+            if (cell.url) {
+                updateCounterDisplay(td, cell.url);
+            }
+            
             tr.appendChild(td);
         });
         tbody.appendChild(tr);

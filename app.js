@@ -65,4 +65,17 @@ const loadedTables = {};
 
     // Инициализация тултипа с задержкой
     initTooltip();
+
+    // Кнопка сброса всех счетчиков
+    const resetBtn = document.createElement('button');
+    resetBtn.className = 'reset-counters-btn';
+    resetBtn.title = 'Сбросить все счетчики';
+    resetBtn.textContent = '🔄';
+    resetBtn.addEventListener('click', () => {
+        if (confirm('Сбросить все счетчики переходов?')) {
+            resetAllClickCounters();
+            updateAllCounterDisplays();
+        }
+    });
+    document.body.appendChild(resetBtn);
 })();
